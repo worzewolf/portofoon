@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="3columns"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <move element="authorization-link-login" destination="header.panel" before="-"/>
+        <move element="top.search" destination="header-wrapper" before="header.contact.info"/>
+        <move element="minicart" destination="header.panel" before="-"/>
+        <move element="copyright" destination="footer-container" after="-"/>
+        <move element="form.subscribe" destination="footer.custom.block.column4" after="-"/>
+        <referenceBlock name="store_language" remove="true"/>
+        <referenceBlock name="register-link" remove="true"/>
+        <referenceBlock name="my-account-link" remove="true"/>
+        <referenceContainer name="wish-list-link" remove="true"/>
+        <referenceBlock name="footer_links" remove="true"/>
+        <referenceBlock name="report.bugs" remove="true"/>
+        <referenceBlock name="header">
+            <arguments>
+                <argument name="show_part" xsi:type="string">other</argument>
+            </arguments>
+        </referenceBlock>
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_file" xsi:type="string">images/logo.png</argument>
+                <argument name="logo_img_width" xsi:type="number">400</argument>
+                <argument name="logo_img_height" xsi:type="number">70</argument>
+            </arguments>
+        </referenceBlock>
+        <referenceContainer name="header-wrapper">
+            <container name="header.contact.info" htmlTag="div" htmlClass="header-contact-info" after="top.search">
+                <block class="Magento\Framework\View\Element\Template" name="header.contact.info.block"
+                       template="Magento_Theme::contact-info-template.phtml"/>
+            </container>
+        </referenceContainer>
+        <referenceBlock name="header.links">
+            <block class="Magento\Framework\View\Element\Html\Link" name="custom-link">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">New Link</argument>
+                    <argument name="path" xsi:type="string" translate="true">new-link</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+        <referenceContainer name="footer">
+            <container name="footer.custom.links" htmlTag="div" htmlClass="footer-custom-links" before="-">
+                <container name="footer.custom.block.column1" htmlTag="div" htmlClass="footer-custom-column">
+                    <block class="Magento\Cms\Block\Block" name="footer.contact">
+                        <arguments>
+                            <argument name="block_id" xsi:type="string">footer.contact</argument>
+                        </arguments>
+                    </block>
+                </container>
+                <container name="footer.custom.block.column2" htmlTag="div" htmlClass="footer-custom-column">
+                    <block class="Magento\Cms\Block\Block" name="footer.contact.service">
+                        <arguments>
+                            <argument name="block_id" xsi:type="string">footer.contact.service</argument>
+                        </arguments>
+                    </block>
+                </container>
+                <container name="footer.custom.block.column3" htmlTag="div" htmlClass="footer-custom-column">
+                    <block class="Magento\Cms\Block\Block" name="footer.general.info">
+                        <arguments>
+                            <argument name="block_id" xsi:type="string">footer.general.info</argument>
+                        </arguments>
+                    </block>
+                </container>
+                <container name="footer.custom.block.column4" htmlTag="div" htmlClass="footer-custom-column newsletter">
+                    <block class="Magento\Cms\Block\Block" name="footer.newsletter" before="footer.social.links">
+                        <arguments>
+                            <argument name="block_id" xsi:type="string">footer.newsletter</argument>
+                        </arguments>
+                    </block>
+                </container>
+            </container>
+        </referenceContainer>
+    </body>
+</page>

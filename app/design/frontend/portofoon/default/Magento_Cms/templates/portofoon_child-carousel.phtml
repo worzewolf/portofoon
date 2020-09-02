@@ -1,0 +1,53 @@
+<?php
+/**
+ *portofoon default Cms portofoon_child-carousel template.
+ *@author Ivan Havryliuk ivan.havryliuk95@gmail.com.
+ *@copyright 2020 worzewolf.
+ */
+?>
+<?php
+$image_name = $block->hasData('img_name') && $block->getData('img_name');
+?>
+<div class="brand-wrapper">
+    <div class="portofoon_brand_slider">
+        <div class="brand">
+            <img class="active-image" src="<?php echo $this->getViewFileUrl('Magento_Cms::images/logos/motorolla.png'); ?>" alt="motorolla">
+            <img class="disabled-image" src="<?php echo $this->getViewFileUrl('Magento_Cms::images/logos/motorolla-hover.png'); ?>" alt="motorolla-hover">
+        </div>
+        <div class="brand">
+            <img class="active-image" src="<?php echo $this->getViewFileUrl('Magento_Cms::images/logos/puxing.png'); ?>" alt="puxing">
+            <img class="disabled-image" src="<?php echo $this->getViewFileUrl('Magento_Cms::images/logos/puxing-hover.png'); ?>" alt="puxing-hover">
+        </div>
+        <div class="brand">
+            <img class="active-image" src="<?php echo $this->getViewFileUrl('Magento_Cms::images/logos/icom.png'); ?>" alt="icom">
+            <img class="disabled-image" src="<?php echo $this->getViewFileUrl('Magento_Cms::images/logos/icom-hover.png'); ?>" alt="icom-hover">
+        </div>
+        <div class="brand">
+            <img class="active-image" src="<?php echo $this->getViewFileUrl('Magento_Cms::images/logos/kenwood.png'); ?>" alt="kenwood">
+            <img class="disabled-image" src="<?php echo $this->getViewFileUrl('Magento_Cms::images/logos/kenwood-hover.png'); ?>" alt="kenwood-hover">
+        </div>
+        <div class="brand">
+            <img class="active-image" src="<?php echo $this->getViewFileUrl('Magento_Cms::images/logos/hytera.png'); ?>" alt="hytera">
+            <img class="disabled-image" src="<?php echo $this->getViewFileUrl('Magento_Cms::images/logos/hytera-hover.png'); ?>" alt="hytera-hover">
+        </div>
+    </div>
+</div>
+<script>
+    (function  () {
+        require(["jquery","owlCarousel"],function($) {
+            $(document).ready(function() {
+                $(".portofoon_brand_slider").owlCarousel({
+                    items: 5,
+                    loop: true,
+                    buttons: false,
+                    nav: false,
+                    dots: false,
+                    touchDrag: true,
+                    mouseDrag: true,
+                    autoplay: true,
+                });
+            }); $('.owl-nav').remove();
+        });
+
+    })();
+</script>

@@ -1,0 +1,321 @@
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .page-header {
+        .panel.wrapper {
+            background: @portofoon_color-dimGray;
+
+            .header.panel {
+                padding: 9px 0;
+            }
+        }
+    }
+
+    .header.panel > .header.links .authorization-link {
+        background: -moz-linear-gradient(@portofoon_color-bermuda, @portofoon_color-deYork, @portofoon_color-atlantis);
+        background: -webkit-gradient(linear, 0 0, 0 100%, from(@portofoon_color-bermuda), to(@portofoon_color-deYork), color-stop(0.5, @portofoon_color-atlantis));
+        padding: 6px 14px;
+        font-size: @font-size__portofoon-s;
+        letter-spacing: .4px;
+        margin-right: 10px;
+        border-radius: 10px;
+
+        a {
+            font-weight: @font-weight__bold;
+        }
+    }
+
+    .minicart-wrapper .action.showcart {
+        .text {
+            position: relative;
+            color: @portofoon_color-white;
+            vertical-align: bottom;
+            font-size: @font-size__portofoon-s;
+            letter-spacing: 1.3px;
+        }
+
+        &.active::before,
+        &::before {
+            content: '';
+        }
+
+        &::after {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-size: @font-size__portofoon-xxxl;
+            line-height: 35px;
+            color: @portofoon_color-white;
+            content: @portofoon_icon-checkout;
+            font-family: 'icons-blank-theme';
+            vertical-align: top;
+        }
+    }
+
+    .block-search .nested {
+        display: none;
+    }
+
+    .header-contact-info {
+        line-height: 12px;
+
+        .contact-title {
+            margin: 0;
+            font-size: @font-size__portofoon-xxl;
+            letter-spacing: .3px;
+
+            .contact-telephone {
+                font-size: 41px;
+                font-family: @font-family__CoveredByYourGrace;
+                color: @portofoon_color-atlantis;
+            }
+        }
+
+        .work-timetable {
+            font-size: 20px;
+        }
+    }
+
+    .copyright {
+        display: block;
+        text-align: center;
+        background: @portofoon_color-yellowGreen;
+        color: @portofoon_color-white;
+        padding: 6px 0;
+        font-size: 25px;
+    }
+
+    .footer-custom-links {
+        display: flex;
+        justify-content: space-between;
+        max-width: @layout__max-width;
+        margin: 0 auto;
+
+        .footer-custom-column {
+            width: 25%;
+            padding-left: 20px;
+
+            .portofoon-footer-title {
+                text-transform: uppercase;
+                color: @portofoon_color-white;
+                font-size: @font-size__portofoon-xl;
+                font-weight: @font-weight__bold;
+                margin: 0;
+            }
+
+            &:first-of-type .portofoon-footer-title {
+                letter-spacing: -1px;
+            }
+
+            &:last-of-type .portofoon-footer-title {
+                padding-left: 24px;
+            }
+
+            .portofoon-footer-navigation-column {
+                margin-top: 28px;
+                font-size: @font-size__portofoon-m;
+                padding-left: 4px;
+                line-height: 39px;
+                letter-spacing: .4px;
+
+                p {
+                    color: @portofoon_color-white;
+                }
+
+
+                .location {
+                    line-height: 29px;
+                }
+
+                .phone-email {
+                    padding: 17px 0 0 28px;
+                    line-height: 30px;
+                    letter-spacing: .7px;
+                    position: relative;
+
+                    &:before,
+                    &:after {
+                        .lib-font-awesome_portofoon();
+                        position: absolute;
+                        font-size: @font-size__portofoon-xxs;
+                        left: 0;
+                        color: @portofoon_color-white;
+                    }
+
+                    &:before {
+                        content: @portofoon_icon-telephone;
+                    }
+
+                    &:after {
+                        content: @portofoon_icon-mail;
+                        bottom: 0;
+                    }
+                }
+
+                .index-address {
+                    padding-top: 19px;
+                    line-height: 28px;
+                }
+            }
+        }
+
+        .newsletter-content {
+            color: @portofoon_color-white;
+            font-size: @font-size__portofoon-m;
+            padding-left: 25px;
+            letter-spacing: 0.5px;
+            padding-top: 27px;
+            line-height: 30px;
+        }
+
+        .block.newsletter {
+            position: relative;
+            min-width: 100%;
+
+            .control:before {
+                content: '';
+            }
+
+            .content {
+                padding-left: 25px;
+            }
+
+            input {
+                width: 100%;
+                background: none;
+                border: 2px solid @portofoon_color-atlantis;
+                border-radius: 9px;
+                padding: 19px 10px;
+                color: @portofoon_color-white;
+                font-size: @font-size__portofoon-l;
+                font-style: italic;
+                position: relative;
+            }
+
+            .action.subscribe {
+                background: url('@{baseDir}images/footer/subscribe.png') no-repeat center center;
+                position: absolute;
+                right: 10px;
+                height: 100%;
+                width: 57px;
+                border: 0;
+
+                span {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+//
+// Desktop
+// ______________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .logo {
+        margin: 0 auto 25px 20px;
+    }
+
+    .header.content {
+        display: flex;
+        justify-content: space-between;
+        flex-flow: row wrap;
+        padding: 30px 0 0;
+    }
+
+    .control .input-text {
+        border: 3px solid @portofoon_color-bermuda;
+        border-radius: 10px;
+        padding: 24px 56px 20px;
+        letter-spacing: .2px;
+        font-size: @font-size__portofoon-s;
+        font-style: italic;
+    }
+
+    .control::before {
+        .lib-font-awesome_portofoon();
+        position: absolute;
+        content: @portofoon_icon-search;
+        color: @portofoon_color-dimGray;
+        left: 25px;
+        top: 15px;
+    }
+
+    .block-search {
+        flex-grow: 1;
+        padding: 0 55px 0 0;
+
+        .block-content {
+            max-width: 585px;
+            margin: 8px auto 0;
+            position: relative;
+        }
+
+        .control {
+            padding: 0 0 25px;
+
+            .nested {
+                display: none;
+            }
+        }
+    }
+
+    .block-search .action.search,
+    .block-search .action.search:hover {
+        background: @portofoon_color-atlantis;
+        border: 5px solid @portofoon_color-atlantis;
+        border-radius: 0 10px 10px 0;
+        padding: 9px 15px 9px 13px;
+        right: 0;
+
+        &::before {
+            color: @portofoon_color-white;
+            content: 'Zoeken';
+            font-size: @font-size__portofoon-xs;
+            font-weight: @font-weight__bold;
+            font-family: @font-family__Roboto;
+        }
+    }
+
+    .navigation {
+        ul {
+            display: flex;
+            justify-content: space-around;
+            font-size: @font-size__portofoon-ml;
+            margin-left: 88px;
+        }
+
+        .level0 .level-top {
+            padding: 8px 0;
+            position: relative;
+
+            &:hover::before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                height: 4px;
+                background: @portofoon_color-atlantis;
+            }
+        }
+    }
+
+    .page-main > .page-title-wrapper .page-title {
+        margin: 45px 0 22px;
+        padding-right: 30px;
+        font-family: @font-family__Roboto;
+        font-weight: @font-weight__regular;
+        font-size: 54px;
+        letter-spacing: .2px;
+    }
+
+    .footer.content {
+        max-width: 100%;
+        background: @portofoon_color-dimGray;
+        margin-top: 20px;
+        padding-top: 22px;
+        padding-bottom: 4px;
+    }
+}

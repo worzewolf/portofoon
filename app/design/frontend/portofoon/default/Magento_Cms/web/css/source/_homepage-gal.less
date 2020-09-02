@@ -1,0 +1,97 @@
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .page-title-wrapper,
+    .homepage-container {
+        text-align: center;
+    }
+
+    .homepage-container {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        position: relative;
+
+        .funny-mobile-logo {
+            max-width: 173px;
+            position: absolute;
+            top: -35px;
+            left: 156px;
+            content: '';
+            background: url('@{baseDir}images/Vector-logo.png') no-repeat center;
+        }
+
+        .child {
+            max-width: 950px;
+            margin-bottom: 9px;
+
+            .child-heading {
+                font-weight: @font-weight__bold;
+                font-size: @font-size__portofoon-m;
+                margin-bottom: 2px;
+            }
+
+            .child-content {
+                font-size: @font-size__portofoon-m;
+                line-height: 28px;
+                letter-spacing: .3px;
+            }
+        }
+
+        .homepage-social {
+            margin: 68px 40px 0 0;
+
+            .smartportofoon-main-logo {
+                max-width: 250px;
+                margin-right: 17px;
+            }
+
+            .social-media-link {
+                margin: 0 4px;
+
+                .fab {
+                    color: @portofoon_color-yellowGreen;
+                    font-size: @font-size__portofoon-xxxl;
+                }
+            }
+        }
+    }
+
+    .brand-wrapper {
+        max-width: 100%;
+        margin-top: 40px;
+    }
+
+    .portofoon_brand_slider .owl-stage-outer {
+        overflow: hidden;
+        max-width: 1574px;
+    }
+
+    .portofoon_brand_slider .owl-stage,
+    .portofoon_brand_slider .owl-item {
+        display: flex;
+
+        .brand {
+            display: flex;
+            flex-grow: 1;
+            justify-content: center;
+            padding-top: @font-size__portofoon-m;
+        }
+
+        .brand:hover {
+            .active-image {
+                display: none;
+            }
+
+            .disabled-image {
+                display: block;
+            }
+        }
+    }
+
+    .disabled-image {
+        display: none;
+    }
+}

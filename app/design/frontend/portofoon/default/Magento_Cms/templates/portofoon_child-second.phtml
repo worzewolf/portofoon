@@ -1,0 +1,17 @@
+<?php
+/**
+ *portofoon default Cms portofoon_child-second template.
+ *@author Ivan Havryliuk ivan.havryliuk95@gmail.com.
+ *@copyright 2020 worzewolf.
+ */
+?>
+<?php
+$image_name = $block->hasData('img_name') && $block->getData('img_name');
+?>
+<div class="homepage-social">
+    <?php if ($image_name) : ?>
+        <img class="smartportofoon-main-logo" src="<?= $block->getViewFileUrl('images/' . $block->getData('img_name')); ?>" alt="<?= $block->getData('img_alt') ?>">
+    <?php endif;?>
+    <a href="#" class="social-media-link"><i class="fab fa-facebook-square"></i></a>
+    <a href="#" class="social-media-link"><i class="fab fa-twitter-square"></i></a>
+</div>
